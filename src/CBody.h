@@ -4,7 +4,7 @@
 // FILE: CBody.h
 // AUTHOR: Yuriy Skriyka
 // DATE: 09-01-2012 
-// DESCRIPTION: The class is a containger for legs.
+// DESCRIPTION: The class is a container for legs.
 //************************************************************************
 
 #include <inttypes.h>

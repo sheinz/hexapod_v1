@@ -2,7 +2,7 @@
 // FILE: CServosMgr.cpp
 // AUTHOR: Yuriy Skriyka
 // DATE: 07-01-2012 
-// DESCRIPTION: The class implements forming the signal to controll several hobby servos. 
+// DESCRIPTION: The class implements forming the signal to control several hobby servos.
 //    The algorithm is based on Servo class implementation from arduino.
 // The configuration of servos (the number of servos) is fully static.
 //************************************************************************
@@ -130,7 +130,7 @@ void CServosMgr::init(void)
 
    //TIFR |= _BV(OCF1A);      // clear any pending interrupts; 
    TIMSK |=  _BV(OCIE1A) ;  // enable the output compare interrupt 
-   OCR1A = US_TO_TICKS(1000);    // call interupt after 1ms
+   OCR1A = US_TO_TICKS(1000);    // call interrupt after 1ms
 }
 
 // ----------------------------------------------------------------------------

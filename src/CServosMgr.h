@@ -16,7 +16,7 @@
 extern "C" void TIMER1_COMPA_vect(void) __attribute__ ((signal));
 
 
-// The class is fully statical. All the public methods are statical.
+// The class is fully static. All the public methods are static.
 class CServosMgr
 {
 private:
@@ -31,11 +31,11 @@ public:
    static void init(void);
 
    // The method sets pulse width for the specified servo number
-   // Note: The method enables dissabled servo
+   // Note: The method enables a disabled servo
    static void setMicros(const uint8_t servo, uint16_t pulse_witdh);
 
    // The method sets pulse width for all the servos in the system
-   // Note: The method doesn't enable disabled servos
+   // Note: The method doesn't enable a disabled servos
    static void setMicrosAll(uint16_t pulse_width);
 
    // Disables the specified servo

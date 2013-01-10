@@ -2,7 +2,7 @@
 // FILE: CADC.cpp
 // AUTHOR: Yuriy Skriyka
 // DATE: 15-01-2012 
-// DESCRIPTION: The class implements a driver for Analog to digical convertor.
+// DESCRIPTION: The class implements a driver for Analog to digital converter.
 //************************************************************************
 
 #include "CADC.h"
