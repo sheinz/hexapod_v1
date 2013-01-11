@@ -22,6 +22,8 @@ public:
 
    void test2(void);
 
+   void test_forward_backward(void);
+
 private:
 
    static const uint8_t LEGS_NUMBER = 6;

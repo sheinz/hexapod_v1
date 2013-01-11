@@ -60,7 +60,7 @@ public:
 
       printf("Voltage: %d\n", voltage);
 
-      if (voltage < 62)
+      if (voltage < 58)
       {
          Timer.beep(true);
       }
@@ -73,9 +73,49 @@ public:
    };
 };
 
+
+class CHeadTest : public ITask
+{
+public:
+	virtual void init(void)
+	{
+		mPosition = 1500;
+		mGoingUp = true;
+		CServosMgr::setMicros(8, mPosition);
+	}
+
+	virtual void onExecute(void)
+	{
+		if (mGoingUp)
+		{
+			mPosition += 25;
+		}
+		else
+		{
+			mPosition -= 25;
+		}
+
+		CServosMgr::setMicros(8, mPosition);
+
+		if (mPosition >= 2000)
+		{
+			mGoingUp = false;
+		}
+		else if (mPosition <= 1000)
+		{
+			mGoingUp = true;
+		}
+	}
+
+private:
+	uint16_t mPosition;
+	bool mGoingUp;
+};
+
 // ----------------------------------------------------------------------------
 
 SimpleTask simpleTask;
+CHeadTest headTest;
 
 int main(void)
 {
@@ -91,7 +131,10 @@ int main(void)
    sei();
 
    simpleTask.init();
+   headTest.init();
+
    TaskMgr.Add(&simpleTask, 100);
+   TaskMgr.Add(&headTest, 10);
 
    Timer.sleep(5000);
    while (true)
